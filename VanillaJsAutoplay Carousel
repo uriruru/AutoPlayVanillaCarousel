@@ -1,0 +1,82 @@
+        <div class="carousel">
+          <div class="slider">
+            <div class="slide slide1">
+              <img src="image1.jpg">
+            </div>
+            <div class="slide slide2">
+              <img src="image2.jpg">
+            </div>
+            <div class="slide slide3">
+              <img src="image3.jpg">
+            </div>
+            <div class="slide slide4">
+              <img src="image4.jpg">
+            </div>
+            <div class="slide slide5">
+              <img src="image5.jpg">
+            </div>
+          </div>
+        </div>
+
+        <style>.carousel {
+          width: 100%;
+          height: 500px;
+          position: relative;
+          overflow: hidden;
+        }
+        
+        .slider {
+          display: flex;
+          width: calc(100% * 5);
+          height: 100%;
+          position: absolute;
+          left: 0;
+          transition: all 0.5s ease-in-out;
+        }
+        
+        .slide {
+          width: calc(100% / 5);
+          height: 100%;
+        }
+        
+        .slide img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+        
+        .slide1 {
+          background-color: #f2f2f2;
+        }
+        
+        .slide2 {
+          background-color: #e6e6e6;
+        }
+        
+        .slide3 {
+          background-color: #d9d9d9;
+        }
+        
+        .slide4 {
+          background-color: #cccccc;
+        }
+        
+        .slide5 {
+          background-color: #bfbfbf;
+        }
+        </style>
+
+        <script>const slider = document.querySelector('.slider');
+          let count = 1;
+          
+          function slide() {
+            slider.style.transform = 'translateX(' + (-count * 20) + '%)';
+            count++;
+          
+            if (count > 4) {
+              count = 0;
+            }
+          }
+          
+          setInterval(slide, 3000);
+          </script>
